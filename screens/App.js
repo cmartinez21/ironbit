@@ -9,7 +9,7 @@ export default class App extends Component {
       pokemon: [],
       url: 'https://pokeapi.co/api/v2/pokemon/'
     }
-  }
+  }   
 
   componentDidMount(){
     this.getPokemon();
@@ -52,12 +52,12 @@ export default class App extends Component {
     }
     return (
       <View style = {styles.container}>
-          <FlatList
+          <FlatList 
             data = {this.state.pokemon} 
             renderItem = {
-              ({item}) => 
-              <TouchableOpacity onPress={() =>this.onSubmit(item.url)}>
-              <Text style = {styles.items}>{item.name}</Text>
+              ({item }) => 
+              <TouchableOpacity style = {styles.items} onPress={() =>this.onSubmit(item.url)}>
+              <Text >{item.name}</Text>
               </TouchableOpacity>
             }
           />
@@ -87,10 +87,13 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   items:{
-    color: '#1136A4',
-    fontSize:18,
-    paddingTop:10,
-    textAlign:'center',
+    flex:1,
+    alignSelf: 'stretch',
+    margin: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  
+
     
   }
 });
